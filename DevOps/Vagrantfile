@@ -26,11 +26,5 @@ Vagrant.configure("2") do |config|
               vb.memory = "1024"
         end
     end
-    server1.vm.provision "shell", inline: <<-SHELL
-      apt-get -y update
-      apt-get -y install nginx
-      service nginx start
-      SHELL
-    end
   end
 end
