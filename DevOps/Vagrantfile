@@ -1,14 +1,3 @@
-$script = <<-SCRIPT
-
-echo "I like Vagrant"
-
-echo "I love Linux"
-
-date > /home/vagrant/vagrant_provisioned_at
-
-SCRIPT
-
-
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
   config.vm.boot_timeout = 1200
@@ -16,11 +5,8 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
 
-
   config.vm.provision :docker
   config.vm.provision :docker_compose
-  config.vm.provision :shell, path: "./scripts/bootstrap.sh"
-
 
   config.vm.define "ci-server" do |ciserver1|
     ciserver1.vm.network "private_network", ip: '192.168.33.60'
@@ -28,18 +14,10 @@ Vagrant.configure("2") do |config|
   end
 
 
-
   config.vm.define "server-2" do |server2|
     server2.vm.network "private_network", ip: '192.168.33.70'
     server2.vm.hostname = "server-2"
-    server2.vm.provision :file, source: "FileTest", destination:"folder"
-
-
-
-    server2.vm.provision "docker" do |d|
-      d.run "hello-world"
-    end
-
+    server2.vm.provision :docker_compose, yml: "/vagrant/ML/docker-compose.yml", rebuild: true, run: "always"
   end
 
 end
