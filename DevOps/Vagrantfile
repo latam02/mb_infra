@@ -24,9 +24,9 @@ Vagrant.configure("2") do |config|
 
 
 
-  config.vm.define "server-1" do |server1|
-   server1.vm.network "private_network", ip: '192.168.33.60'
-   server1.vm.hostname = "server-1"
+  config.vm.define "ci-server" do |ciserver1|
+    ciserver1.vm.network "private_network", ip: '192.168.33.60'
+    ciserver1.vm.hostname = "ci-server"
   end
 
 
