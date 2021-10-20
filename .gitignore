@@ -1,5 +1,4 @@
 .vagrant
 ubuntu-bionic-18.04-cloudimg-console.log
 ML/media
-ML/image_recognizer/__pycache__
-ML/image_recognizer_app/__pycache__
+__pycache__
