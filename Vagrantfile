@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     ciserver1.vm.hostname = "ci-server"
     ciserver1.vm.provision :file, source:"./Docker/docker-compose.ci.yml", destination:"/home/vagrant/docker-compose.yml"
     ciserver1.vm.provision :docker_compose, yml:"/home/vagrant/docker-compose.yml", run:"always"
+    ciserver1.vm.provision "shell", inline: "sudo chmod 777 /var/run/docker.sock"
   end
 
 
