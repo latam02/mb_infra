@@ -1,2 +1,4 @@
 .vagrant
-DevOps/ubuntu-bionic-18.04-cloudimg-console.log
+*.log
+ML/media
+__pycache__
