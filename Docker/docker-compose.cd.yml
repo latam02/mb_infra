@@ -19,7 +19,7 @@ services:
       - gocd_server
     environment: 
       - GO_SERVER_URL=http://gocd_server:8153/go
-      - AGENT_AUTO_REGISTER_KEY=7ae82dc8-661e-4eb1-9575-e1467379c96d
+      - AGENT_AUTO_REGISTER_KEY=46d25ae3-0b93-4eaf-b0c6-4c57364f18f4
       - AGENT_AUTO_REGISTER_RESOURCES=centos
       - AGENT_AUTO_REGISTER_HOSTNAME=gocd_agent_centos
     volumes:
@@ -33,7 +33,7 @@ services:
       - gocd_server
     environment: 
       - GO_SERVER_URL=http://gocd_server:8153/go
-      - AGENT_AUTO_REGISTER_KEY=7ae82dc8-661e-4eb1-9575-e1467379c96d
+      - AGENT_AUTO_REGISTER_KEY=46d25ae3-0b93-4eaf-b0c6-4c57364f18f4
       - AGENT_AUTO_REGISTER_RESOURCES=ubuntu
       - AGENT_AUTO_REGISTER_HOSTNAME=gocd_agent_ubuntu
     volumes:
@@ -47,7 +47,7 @@ services:
       - gocd_server
     environment: 
       - GO_SERVER_URL=http://gocd_server:8153/go
-      - AGENT_AUTO_REGISTER_KEY=7ae82dc8-661e-4eb1-9575-e1467379c96d
+      - AGENT_AUTO_REGISTER_KEY=46d25ae3-0b93-4eaf-b0c6-4c57364f18f4
       - AGENT_AUTO_REGISTER_RESOURCES=docker
       - AGENT_AUTO_REGISTER_HOSTNAME=gocd_agent_docker
     volumes:
